@@ -2,7 +2,7 @@
 
 var app = {
   title: 'Indecision App',
-  subtitle: 'The Subtitle'
+  options: []
 };
 
 var template = React.createElement(
@@ -13,17 +13,36 @@ var template = React.createElement(
     null,
     app.title
   ),
-  React.createElement(
+  app.subtitle && React.createElement(
     'p',
     null,
     app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? 'Here are your options' : 'No options'
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'Item One'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'Item Two'
+    )
   )
 );
 
 var user = {
   name: 'Ryan',
-  // age: 33,
-  location: 'DC'
+  age: 33,
+  location: 'Washington, DC'
 };
 
 var getLocation = function getLocation(location) {
@@ -54,8 +73,5 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-// Render method on ReactDOM takes 2 args =>
-// 1) JSX to render
-// 2) DOM element where you'd like to render
-
-ReactDOM.render(templateTwo, appRoot);
+// render takes 2 args => 1) JSX to render, 2) DOM element you'd like to render
+ReactDOM.render(template, appRoot);

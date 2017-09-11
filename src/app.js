@@ -1,19 +1,24 @@
 const app = {
   title: 'Indecision App',
-  subtitle: 'The Subtitle',
+  options: [],
 };
 
 const template = (
   <div>
     <h1>{app.title}</h1>
-    <p>{app.subtitle}</p>
+    {app.subtitle && <p>{app.subtitle}</p>}
+    <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+    <ol>
+      <li>Item One</li>
+      <li>Item Two</li>
+    </ol>
   </div>
 );
 
 const user = {
   name: 'Ryan',
-  // age: 33,
-  location: 'DC',
+  age: 33,
+  location: 'Washington, DC',
 };
 
 const getLocation = location => {
@@ -22,7 +27,7 @@ const getLocation = location => {
 
 const templateTwo = (
   <div>
-    <h1>{user.name? user.name: 'Anonymous'}</h1>
+    <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
     {getLocation(user.location)}
   </div>
@@ -30,8 +35,5 @@ const templateTwo = (
 
 const appRoot = document.getElementById('app');
 
-// Render method on ReactDOM takes 2 args =>
-// 1) JSX to render
-// 2) DOM element where you'd like to render
-
-ReactDOM.render(templateTwo, appRoot);
+// render takes 2 args => 1) JSX to render, 2) DOM element you'd like to render
+ReactDOM.render(template, appRoot);
