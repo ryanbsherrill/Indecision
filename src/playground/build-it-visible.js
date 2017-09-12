@@ -1,8 +1,10 @@
 let visibility = false;
+
 const toggleVisibility = () => {
   visibility = !visibility;
   render();
 };
+
 const render = () => {
   const jsx = (
     <div>
@@ -20,4 +22,5 @@ const render = () => {
   );
   ReactDOM.render(jsx, document.getElementById('app'));
 };
+
 render();
