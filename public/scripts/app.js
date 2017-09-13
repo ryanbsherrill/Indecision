@@ -20,6 +20,7 @@ var VisibilityToggle = function (_React$Component) {
     _this.state = {
       visibility: false
     };
+    _this.handleToggleVisibility = _this.handleToggleVisibility.bind(_this);
     return _this;
   }
 
@@ -28,7 +29,7 @@ var VisibilityToggle = function (_React$Component) {
     value: function handleToggleVisibility() {
       this.setState(function (prevState) {
         return {
-          visbility: !prevState.visibility
+          visibility: !prevState.visibility
         };
       });
     }
