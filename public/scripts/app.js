@@ -26,7 +26,32 @@ var IndecisionApp = function (_React$Component) {
     return _this;
   }
 
+  // when the component first mounts to the DOM
+
+
   _createClass(IndecisionApp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('componentDidMount');
+    }
+
+    // when the state changes
+    // has access to prevProps and prevState
+
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      console.log('componentDidUpdate');
+    }
+
+    // when a component goes away
+
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('componentWillUnmount');
+    }
+  }, {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
       this.setState(function () {

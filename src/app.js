@@ -11,15 +11,29 @@ class IndecisionApp extends React.Component {
 
   }
 
+  // when the component first mounts to the DOM
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+
+  // when the state changes
+  // has access to prevProps and prevState
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate')
+  }
+
+  // when a component goes away
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
+  }
+
   handleDeleteOptions() {
     this.setState(() => ( {options: [] }));
   }
 
   handleDeleteOption(optionToRemove) {
     this.setState((prevState) => ({
-      options: prevState.options.filter((option) => {
-        return optionToRemove !== option;
-      })
+      options: prevState.options.filter((option) => optionToRemove !== option)
     }));
   }
 
