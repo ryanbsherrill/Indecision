@@ -1,3 +1,5 @@
-import { isAdult, canDrink } from './person';
-console.log(isAdult(17));
-console.log(canDrink(21));
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const template = <p>WHAT UP YALL</p>;
+ReactDOM.render(template, document.getElementById('app'));
